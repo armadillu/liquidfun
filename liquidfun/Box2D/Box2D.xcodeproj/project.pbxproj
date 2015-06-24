@@ -210,6 +210,7 @@
 		B8AE86CF99AF42869EC200EB /* fg_videoresize.c in Sources */ = {isa = PBXBuildFile; fileRef = 26EA5C9C54944FC58BC6E93E /* fg_videoresize.c */; settings = {COMPILER_FLAGS = ""; }; };
 		BB131995B02B408BAF693E47 /* fg_cursor.c in Sources */ = {isa = PBXBuildFile; fileRef = 1B5CB902441D4DC7A502DFC6 /* fg_cursor.c */; settings = {COMPILER_FLAGS = ""; }; };
 		BB221FB04B714B73B39599C2 /* BlockAllocatorTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 355260782A10489E84E1E46F /* BlockAllocatorTests.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		BB7CF2911B3B78F600512395 /* ofxRemoteUIofParamaterSync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB7CF28F1B3B78F600512395 /* ofxRemoteUIofParamaterSync.cpp */; };
 		BBFCB5021B3B596700E930E4 /* ofStolenUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BBFCB4CB1B3B596700E930E4 /* ofStolenUtils.cpp */; };
 		BBFCB5031B3B596700E930E4 /* ofStolenUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BBFCB4CB1B3B596700E930E4 /* ofStolenUtils.cpp */; };
 		BBFCB5041B3B596700E930E4 /* ofStolenUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BBFCB4CB1B3B596700E930E4 /* ofStolenUtils.cpp */; };
@@ -937,6 +938,8 @@
 		B563864224634428A85FAE56 /* BodyTracker.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = BodyTracker.cpp; path = Unittests/BodyTracker.cpp; sourceTree = SOURCE_ROOT; };
 		B7A4AAF2936C413B8B50236F /* ShapeEditing.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ShapeEditing.h; path = Testbed/Tests/ShapeEditing.h; sourceTree = SOURCE_ROOT; };
 		B855DCAA6EF94984926B8AA8 /* gtest_main.cc */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = gtest_main.cc; path = ../../googletest/src/gtest_main.cc; sourceTree = SOURCE_ROOT; };
+		BB7CF28F1B3B78F600512395 /* ofxRemoteUIofParamaterSync.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxRemoteUIofParamaterSync.cpp; sourceTree = "<group>"; };
+		BB7CF2901B3B78F600512395 /* ofxRemoteUIofParamaterSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxRemoteUIofParamaterSync.h; sourceTree = "<group>"; };
 		BBFCB4CB1B3B596700E930E4 /* ofStolenUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofStolenUtils.cpp; sourceTree = "<group>"; };
 		BBFCB4CC1B3B596700E930E4 /* ofStolenUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofStolenUtils.h; sourceTree = "<group>"; };
 		BBFCB4D21B3B596700E930E4 /* IpEndpointName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IpEndpointName.cpp; sourceTree = "<group>"; };
@@ -1746,6 +1749,8 @@
 		BBFCB53B1B3B597000E930E4 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				BB7CF28F1B3B78F600512395 /* ofxRemoteUIofParamaterSync.cpp */,
+				BB7CF2901B3B78F600512395 /* ofxRemoteUIofParamaterSync.h */,
 				BBFCB53C1B3B597000E930E4 /* dirent_vs.h */,
 				BBFCB53D1B3B597000E930E4 /* ofxRemoteUI.cpp */,
 				BBFCB53E1B3B597000E930E4 /* ofxRemoteUI.h */,
@@ -2517,6 +2522,7 @@
 				85C9FA20FB9C41C39412DF81 /* b2CircleShape.cpp in Sources */,
 				7FBBAB59C13248E7A5EE2883 /* b2EdgeShape.cpp in Sources */,
 				E2F07E89837F4533A4A417F8 /* b2PolygonShape.cpp in Sources */,
+				BB7CF2911B3B78F600512395 /* ofxRemoteUIofParamaterSync.cpp in Sources */,
 				A1B54FE6F08748D4B33A5629 /* b2BroadPhase.cpp in Sources */,
 				C43E2048A3B045ED8DF0ADF9 /* b2CollideCircle.cpp in Sources */,
 				BBFCB5381B3B596700E930E4 /* README.md in Sources */,
@@ -4756,6 +4762,7 @@
 					"'LIQUIDFUN_EXTERNAL_LANGUAGE_API=1'",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				HEADER_SEARCH_PATHS = (
 					./Box2D/..,
 					"./Box2D/../ofxRemoteUI/noOFLibs/**",
@@ -5018,6 +5025,7 @@
 					"'LIQUIDFUN_EXTERNAL_LANGUAGE_API=1'",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				HEADER_SEARCH_PATHS = (
 					./Box2D/..,
 					"./Box2D/../ofxRemoteUI/noOFLibs/**",
@@ -6852,6 +6860,7 @@
 					"'LIQUIDFUN_EXTERNAL_LANGUAGE_API=1'",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				HEADER_SEARCH_PATHS = (
 					./Box2D/..,
 					"./Box2D/../ofxRemoteUI/noOFLibs/**",
@@ -6966,6 +6975,7 @@
 					"'LIQUIDFUN_EXTERNAL_LANGUAGE_API=1'",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				HEADER_SEARCH_PATHS = (
 					./Box2D/..,
 					"./Box2D/../ofxRemoteUI/noOFLibs/**",
