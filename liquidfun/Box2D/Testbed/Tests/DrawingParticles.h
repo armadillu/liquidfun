@@ -18,6 +18,11 @@
 #ifndef DRAWING_PARITLCES_H
 #define DRAWING_PARITLCES_H
 
+#include "../../../ofxRemoteUI/src/ofxRemoteUIServer.h"
+#include "../../../ofxRemoteUI/src/ofxRemoteUIVars.h"
+
+b2ParticleColor currentColor = b2ParticleColor(0xff, 0xff, 0xff, 0xff);
+
 class DrawingParticles : public Test
 {
 private:
@@ -45,8 +50,8 @@ public:
 				const b2Vec2 vertices[4] = {
 					b2Vec2(-4, -2),
 					b2Vec2(4, -2),
-					b2Vec2(4, 0),
-					b2Vec2(-4, 0)};
+					b2Vec2(4, -1),
+					b2Vec2(-4, -1)};
 				shape.Set(vertices, 4);
 				ground->CreateFixture(&shape, 0.0f);
 			}
@@ -55,8 +60,8 @@ public:
 				b2PolygonShape shape;
 				const b2Vec2 vertices[4] = {
 					b2Vec2(-4, -2),
-					b2Vec2(-2, -2),
-					b2Vec2(-2, 6),
+					b2Vec2(-2.4, -2),
+					b2Vec2(-2.4, 6),
 					b2Vec2(-4, 6)};
 				shape.Set(vertices, 4);
 				ground->CreateFixture(&shape, 0.0f);
@@ -65,10 +70,10 @@ public:
 			{
 				b2PolygonShape shape;
 				const b2Vec2 vertices[4] = {
-					b2Vec2(2, -2),
+					b2Vec2(2.4, -2),
 					b2Vec2(4, -2),
 					b2Vec2(4, 6),
-					b2Vec2(2, 6)};
+					b2Vec2(2.4, 6)};
 				shape.Set(vertices, 4);
 				ground->CreateFixture(&shape, 0.0f);
 			}
@@ -76,8 +81,8 @@ public:
 			{
 				b2PolygonShape shape;
 				const b2Vec2 vertices[4] = {
-					b2Vec2(-4, 4),
-					b2Vec2(4, 4),
+					b2Vec2(-4, 5),
+					b2Vec2(4, 5),
 					b2Vec2(4, 6),
 					b2Vec2(-4, 6)};
 				shape.Set(vertices, 4);
@@ -96,6 +101,18 @@ public:
 
 		m_particleFlags = TestMain::GetParticleParameterValue();
 		m_groupFlags = 0;
+
+		if(!RUI_PARAM_EXISTS("strength")){ //only the first instance
+			RUI_NEW_GROUP("DRAW EXAMPLE");
+			RUI_DEFINE_VAR_WV(float, "strength", 1 , 0.01, 10.0);
+			RUI_DEFINE_VAR_WV(float, "paintRadius", 0.1 , 0.01, 0.2);
+			RUI_DEFINE_VAR_WV(float, "gravity", 0.0 , -10, 10);
+			RUI_DEFINE_VAR_WV(bool, "tensile", false);
+			RUI_DEFINE_VAR_WV(bool, "springy", false);
+			RUI_DEFINE_VAR_WV(bool, "viscous", false);
+			RUI_LOAD_FROM_XML();
+		}
+
 	}
 
 	// Determine the current particle parameter from the drawing state and
@@ -138,50 +155,64 @@ public:
 		m_groupFlags = 0;
 		switch (key)
 		{
-		case 'E':
+		case 'E': //elastic
 			m_particleFlags = b2_elasticParticle;
 			m_groupFlags = b2_solidParticleGroup;
+			currentColor = b2ParticleColor(0xff, 0x00, 0x00, 0xff);
 			break;
-		case 'P':
+		case 'P': //powder
 			m_particleFlags = b2_powderParticle;
+			currentColor = b2ParticleColor(0xff, 0xff, 0xff, 0xff);
 			break;
-		case 'R':
+		case 'R': //rigid
+			currentColor = b2ParticleColor(0xa0, 0xa0, 0xa0, 0xff);
 			m_groupFlags = b2_rigidParticleGroup | b2_solidParticleGroup;
 			break;
-		case 'S':
+		case 'S': //srping
 			m_particleFlags = b2_springParticle;
+			currentColor = b2ParticleColor(0x00, 0xff, 0x00, 0xff);
 			m_groupFlags = b2_solidParticleGroup;
 			break;
-		case 'T':
+		case 'T': //tensile
+			currentColor = b2ParticleColor(0x00, 0x00, 0xff, 0xff);
 			m_particleFlags = b2_tensileParticle;
 			break;
-		case 'V':
-			m_particleFlags = b2_viscousParticle;
+		case 'V': //viscous
+			currentColor = b2ParticleColor(0x00, 0xff, 0xaa, 0xff);
+			m_particleFlags = b2_viscousParticle | b2_elasticParticle;
 			break;
-		case 'W':
+		case 'W': //wall
+			currentColor = b2ParticleColor(0x00, 0xff, 0xff, 0xff);
 			m_particleFlags = b2_wallParticle;
 			m_groupFlags = b2_solidParticleGroup;
 			break;
 		case 'B':
 			m_particleFlags = b2_barrierParticle | b2_wallParticle;
+			currentColor = b2ParticleColor(0xff, 0xff, 0x00, 0xff);
 			break;
 		case 'H':
 			m_particleFlags = b2_barrierParticle;
 			m_groupFlags = b2_rigidParticleGroup;
+			currentColor = b2ParticleColor(0xff, 0x00, 0xff, 0xff);
 			break;
 		case 'N':
 			m_particleFlags = b2_barrierParticle | b2_elasticParticle;
 			m_groupFlags = b2_solidParticleGroup;
+			currentColor = b2ParticleColor(0xaa, 0xaa, 0x00, 0xff);
 			break;
 		case 'M':
 			m_particleFlags = b2_barrierParticle | b2_springParticle;
 			m_groupFlags = b2_solidParticleGroup;
+			currentColor = b2ParticleColor(0x00, 0xaa, 0x00, 0xff);
 			break;
 		case 'F':
 			m_particleFlags = b2_wallParticle | b2_repulsiveParticle;
+			currentColor = b2ParticleColor(0xff, 0x88, 0x00, 0xff);
 			break;
 		case 'C':
-			m_particleFlags = b2_colorMixingParticle;
+			m_colorIndex = (m_colorIndex + 1) % k_ParticleColorsCount;
+			currentColor = k_ParticleColors[m_colorIndex];
+
 			break;
 		case 'Z':
 			m_particleFlags = b2_zombieParticle;
@@ -199,7 +230,7 @@ public:
 		{
 			b2CircleShape shape;
 			shape.m_p = p;
-			shape.m_radius = 0.2f;
+			shape.m_radius = RUI_GET_VAR(float, "paintRadius");
 			b2Transform xf;
 			xf.SetIdentity();
 
@@ -220,9 +251,25 @@ public:
 			{
 				pd.flags |= b2_reactiveParticle;
 			}
+			if(RUI_GET_VAR(bool, "viscous")){
+				pd.flags |= b2_viscousParticle;
+			}
+
+			if(RUI_GET_VAR(bool, "tensile")){
+				pd.flags |= b2_tensileParticle;
+			}
+
+			if(RUI_GET_VAR(bool, "springy")){
+				pd.flags |= b2_springParticle;
+			}
+
 			pd.groupFlags = m_groupFlags;
-			pd.color = k_ParticleColors[m_colorIndex];
+			//pd.color = k_ParticleColors[m_colorIndex];
+			pd.color = currentColor;
 			pd.group = m_lastGroup;
+
+			pd.strength = RUI_GET_VAR(float, "strength");
+
 			m_lastGroup = m_particleSystem->CreateParticleGroup(pd);
 			m_mouseTracing = false;
 		}
@@ -260,6 +307,8 @@ public:
 
 	void Step(Settings* settings)
 	{
+		m_world->SetGravity(b2Vec2(0.0f, RUI_GET_VAR(float, "gravity")));
+
 		const uint32 parameterValue = TestMain::GetParticleParameterValue();
 		m_drawing = (parameterValue & e_parameterMove) != e_parameterMove;
 		if (m_drawing)
@@ -309,7 +358,7 @@ public:
 
 		Test::Step(settings);
 		m_debugDraw.DrawString(
-			5, m_textLine, "Keys: (L) liquid, (E) elastic, (S) spring");
+			5, m_textLine, "Keys: (L) liquid, (E) elastic, (S) spring, (P) powder");
 		m_textLine += DRAW_STRING_NEW_LINE;
 		m_debugDraw.DrawString(
 			5, m_textLine, "(R) rigid, (W) wall, (V) viscous, (T) tensile");

@@ -37,6 +37,9 @@
 #include <string>
 #include <sstream>
 
+#include "../../../ofxRemoteUI/src/ofxRemoteUIServer.h"
+
+
 namespace TestMain
 {
 
@@ -48,8 +51,8 @@ namespace
 	TestEntry* entry;
 	Test* test;
 	Settings settings;
-	int32 width = 640;
-	int32 height = 540;
+	int32 width = 1100;
+	int32 height = 1100;
 	int32 framePeriod = 16;
 	int32 mainWindow;
 	float settingsHz = 60.0;
@@ -165,6 +168,8 @@ static void Timer(int)
 
 static void SimulationLoop()
 {
+	RUI_UPDATE(0.01666);
+
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	glMatrixMode(GL_MODELVIEW);
@@ -337,7 +342,7 @@ static void Keyboard(unsigned char key, int x, int y)
 		break;
 
 		// Press ~ to enable / disable the fullscreen UI.
-	case '~':
+	case '0':
 		fullscreenUI.SetEnabled(!fullscreenUI.GetEnabled());
 		break;
 
@@ -565,6 +570,9 @@ static void Exit(int code)
 #ifdef FREEGLUT
 	glutLeaveMainLoop();
 #endif
+	RUI_SAVE_TO_XML();
+	RUI_CLOSE();
+
 	exit(code);
 }
 #endif  // ENABLE_GLUI
@@ -583,6 +591,9 @@ int main(int argc, char** argv)
 {
 	using namespace TestMain;
 
+	//start the server
+	RUI_SETUP();
+
 	testCount = 0;
 	while (g_testEntries[testCount].createFcn != NULL)
 	{
@@ -590,6 +601,7 @@ int main(int argc, char** argv)
 	}
 
 	testIndex = b2Clamp(testIndex, 0, testCount-1);
+	testIndex = 7;
 	testSelection = testIndex;
 
 	entry = g_testEntries + testIndex;
@@ -697,6 +709,8 @@ int main(int argc, char** argv)
 	glui->set_main_gfx_window( mainWindow );
 
 #endif  // ENABLE_GLUI
+
+
 
 	// Configure the fullscreen UI's viewport parameters.
 	fullscreenUI.SetViewParameters(&settings.viewCenter, &extents);

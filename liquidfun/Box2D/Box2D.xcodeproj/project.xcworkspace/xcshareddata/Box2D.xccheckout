@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F513C535-BC7A-4EE1-BC2A-47AB9AB8DFA1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Box2D</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>679014F0-5FF9-4AA4-973B-C2DCE4AB9042</key>
+		<string>ssh://github.com/armadillu/liquidfun.git</string>
+		<key>918C6BE4-47EB-4B87-82B2-F41086A83578</key>
+		<string>ssh://github.com/armadillu/ofxRemoteUI.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>liquidfun/Box2D/Box2D.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>679014F0-5FF9-4AA4-973B-C2DCE4AB9042</key>
+		<string>../../../..</string>
+		<key>918C6BE4-47EB-4B87-82B2-F41086A83578</key>
+		<string>../../ofxRemoteUI</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/armadillu/liquidfun.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>679014F0-5FF9-4AA4-973B-C2DCE4AB9042</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>679014F0-5FF9-4AA4-973B-C2DCE4AB9042</string>
+			<key>IDESourceControlWCCName</key>
+			<string>liquidfun</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>918C6BE4-47EB-4B87-82B2-F41086A83578</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxRemoteUI</string>
+		</dict>
+	</array>
+</dict>
+</plist>
