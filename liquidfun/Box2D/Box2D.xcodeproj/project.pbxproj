@@ -3643,6 +3643,7 @@
 					ofxRemoteUI/noOFLibs/ofxOsc/src,
 					"ofxRemoteUI/noOFLibs/**",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SYMROOT = ./build;
@@ -5942,6 +5943,7 @@
 					ofxRemoteUI/noOFLibs/ofxOsc/src,
 					"ofxRemoteUI/noOFLibs/**",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SYMROOT = ./build;
@@ -6564,6 +6566,7 @@
 					ofxRemoteUI/noOFLibs/ofxOsc/src,
 					"ofxRemoteUI/noOFLibs/**",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SYMROOT = ./build;
@@ -8369,6 +8372,7 @@
 					ofxRemoteUI/noOFLibs/ofxOsc/src,
 					"ofxRemoteUI/noOFLibs/**",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SYMROOT = ./build;
