@@ -307,7 +307,6 @@ public:
 
 	void Step(Settings* settings)
 	{
-		m_world->SetGravity(b2Vec2(0.0f, RUI_GET_VAR(float, "gravity")));
 
 		const uint32 parameterValue = TestMain::GetParticleParameterValue();
 		m_drawing = (parameterValue & e_parameterMove) != e_parameterMove;

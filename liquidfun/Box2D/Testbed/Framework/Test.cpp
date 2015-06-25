@@ -20,6 +20,8 @@
 #include "Test.h"
 #include "Main.h"
 #include <stdio.h>
+#include "../../../ofxRemoteUI/src/ofxRemoteUIServer.h"
+#include "../../../ofxRemoteUI/src/ofxRemoteUIVars.h"
 
 void DestructionListener::SayGoodbye(b2Joint* joint)
 {
@@ -346,6 +348,12 @@ void Test::LaunchBomb(const b2Vec2& position, const b2Vec2& velocity)
 
 void Test::Step(Settings* settings)
 {
+
+	if(RUI_PARAM_EXISTS("gravity")){
+		float g = RUI_GET_VAR(float, "gravity");
+		m_world->SetGravity(b2Vec2(0.0f, g));
+	}
+
 	float32 timeStep = settings->hz > 0.0f ? 1.0f / settings->hz : float32(0.0f);
 
 	if (settings->pause)

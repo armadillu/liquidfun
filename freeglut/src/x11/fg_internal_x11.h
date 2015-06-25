@@ -209,7 +209,7 @@ struct tagSFG_PlatformJoystick
 
 
 /* Menu font and color definitions */
-#define  FREEGLUT_MENU_FONT    GLUT_BITMAP_HELVETICA_18
+#define  FREEGLUT_MENU_FONT    GLUT_BITMAP_HELVETICA_12
 
 #define  FREEGLUT_MENU_PEN_FORE_COLORS   {0.0f,  0.0f,  0.0f,  1.0f}
 #define  FREEGLUT_MENU_PEN_BACK_COLORS   {0.70f, 0.70f, 0.70f, 1.0f}
