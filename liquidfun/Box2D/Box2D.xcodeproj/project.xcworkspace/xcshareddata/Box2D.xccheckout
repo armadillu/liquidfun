@@ -10,33 +10,45 @@
 	<string>Box2D</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>679014F0-5FF9-4AA4-973B-C2DCE4AB9042</key>
-		<string>ssh://github.com/armadillu/liquidfun.git</string>
-		<key>918C6BE4-47EB-4B87-82B2-F41086A83578</key>
-		<string>ssh://github.com/armadillu/ofxRemoteUI.git</string>
+		<key>932BE68C6CC498A3F5CF7382A246B41D417B88D0</key>
+		<string>github.com:armadillu/liquidfun.git</string>
+		<key>9B16984896B950513C045C698844FAD6DC7FF732</key>
+		<string>github.com:armadillu/ofxRemoteUI.git</string>
+		<key>E70AC2FB27C3CC3D20A35C1ADB2233667B151262</key>
+		<string>git.assembla.com:tech-museum-bio.virtual.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>liquidfun/Box2D/Box2D.xcodeproj/project.xcworkspace</string>
+	<string>liquidfun/Box2D/Box2D.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>679014F0-5FF9-4AA4-973B-C2DCE4AB9042</key>
+		<key>932BE68C6CC498A3F5CF7382A246B41D417B88D0</key>
 		<string>../../../..</string>
-		<key>918C6BE4-47EB-4B87-82B2-F41086A83578</key>
-		<string>../../ofxRemoteUI</string>
+		<key>9B16984896B950513C045C698844FAD6DC7FF732</key>
+		<string>../../../..liquidfun/Box2D/ofxRemoteUI</string>
+		<key>E70AC2FB27C3CC3D20A35C1ADB2233667B151262</key>
+		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/armadillu/liquidfun.git</string>
+	<string>github.com:armadillu/liquidfun.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>679014F0-5FF9-4AA4-973B-C2DCE4AB9042</string>
+	<string>932BE68C6CC498A3F5CF7382A246B41D417B88D0</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>679014F0-5FF9-4AA4-973B-C2DCE4AB9042</string>
+			<string>E70AC2FB27C3CC3D20A35C1ADB2233667B151262</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>932BE68C6CC498A3F5CF7382A246B41D417B88D0</string>
 			<key>IDESourceControlWCCName</key>
 			<string>liquidfun</string>
 		</dict>
@@ -44,7 +56,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>918C6BE4-47EB-4B87-82B2-F41086A83578</string>
+			<string>9B16984896B950513C045C698844FAD6DC7FF732</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ofxRemoteUI</string>
 		</dict>
